@@ -18,12 +18,16 @@ const App = () => {
   const [currentUser, setCurrentUser] = useState<string | null>(null);
 
   const getData = async () => {
-    const res = await axios.get<{ success: boolean; sesstions: Data[] }>("http://localhost:3000/sessions");
+    const res = await axios.get<{ success: boolean; sesstions: Data[] }>(
+      "https://productivityyosi-backend.onrender.com/sessions"
+    );
     setData(res.data.sesstions);
     console.log(res.data);
   };
   const getUsers = async () => {
-    const res = await axios.get<{ success: boolean; users: Users[] }>("http://localhost:3000/users");
+    const res = await axios.get<{ success: boolean; users: Users[] }>(
+      "https://productivityyosi-backend.onrender.com/users"
+    );
     setUsers(res.data.users);
     console.log(res.data);
   };
@@ -63,7 +67,9 @@ const App = () => {
         <div className=" flex flex-col items-center">
           <div
             onClick={async () => {
-              await axios.post("http://localhost:3000/newSession", { userId: currentUser });
+              await axios.post("https://productivityyosi-backend.onrender.com/newSession", {
+                userId: currentUser,
+              });
               getallData();
             }}
             className=" p-8 rounded-2xl bg-blue-950 text-white text-4xl font-semibold"
