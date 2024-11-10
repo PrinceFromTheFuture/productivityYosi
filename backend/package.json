@@ -1,0 +1,31 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon dist/server.js",
+    "migrate": " npx drizzle-kit push --config ./src/drizzle.config.ts",
+    "generate": " npx drizzle-kit generate --config ./src/drizzle.config.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.3",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dayjs": "^1.11.13",
+    "dotenv": "^16.4.5",
+    "drizzle-orm": "^0.36.1",
+    "express": "^4.21.1",
+    "nodemon": "^3.1.7",
+    "tsc": "^2.0.4",
+    "typescript": "^5.6.3"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "drizzle-kit": "^0.28.0"
+  }
+}
